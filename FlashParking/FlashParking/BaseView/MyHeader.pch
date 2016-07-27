@@ -1,0 +1,219 @@
+//
+//  MyHeader.pch
+//  FlashParking
+//
+//  Created by 薄号 on 16/6/13.
+//  Copyright © 2016年 LettingTechnology. All rights reserved.
+//
+
+#ifndef MyHeader_pch
+#define MyHeader_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+//174  测试
+#define kHttpDemo @"http://mobile.letting.tech:9000"
+
+#define KHttp @"http://58.246.94.42:8080"
+
+#define KHttpDubbo @"http://112.65.170.174:8081"
+
+
+
+//----------用户注册--------
+//登录
+#define kHttpLogin @"/user/login"
+
+//注册
+#define kHttpRegister @"/user/register"
+
+//申请短信验证码
+#define kHttpactivateCode @"/activate/code"
+
+//验证短信验证码
+#define kHttpActivateMobile @"/activate/mobile"
+
+//密码重置
+#define kHttpPwdrst @"/user/pwdrst"
+
+
+//添加车辆
+#define kHttpaddcar @"/car/add"
+
+//车辆管理
+#define kHttpCarManager @"/car/mine"
+
+//删除车辆
+#define  kHttpDelcar @"/car/delete"
+
+//车牌验证
+#define  KHttpVerify @"/car/verify"
+
+
+//----------停车场查询----------
+//附近停车场列表
+#define kHttpNearpark @"/park/nearby"
+
+//附近停车场详情
+#define kHttpParkDetail @"/park/detail"
+
+
+
+//--------订单列表
+//订单列表
+#define kHttpMine @"/order/mine"
+
+//订单详情
+#define  kHttpMineDetail @"/order/detail"
+
+//支付
+#define alipay @"/payment/aliSign"
+
+//--------用户信息、设置
+//信息更新
+#define kHttpInfoUpdate @"/user/update"
+
+//用户设置更新
+#define kHttpSetting @"/user/setting"
+
+//----------车位主
+//添加车位
+#define kHttpParkAdd @"/park/add"
+
+//查询车位
+#define kHttpParkQuery @"/park/querybyuser"
+
+//车位主发布车位以及车位审核
+#define kHttpVerify @"/park/verify"
+
+//车位修改
+#define kHttpModify @"/park/modify"
+
+//融云
+#define KHttpToken @"/rongyun/gettoken"
+
+
+
+/*
+ -----------------------------------------------------------------
+ */
+#define FingerTips_Macro_Config_h
+#define BMapLog(...) NSLog(__VA_ARGS__)
+#define BMapLogHere  BMapLog(@"%s",__FUNCTION__)
+
+//DEBUG  模式下打印日志,当前行
+//#ifdef DEBUG
+//#define NSLog(format, ...) do {                                                             \
+//fprintf(stderr, "<%s : %d> %s\n",                                           \
+//[[[NSString stringWithUTF8String:__FILE__] lastPathComponent] UTF8String],  \
+//__LINE__, __func__);                                                        \
+//(NSLog)((format), ##__VA_ARGS__);                                           \
+//fprintf(stderr, "-------\n");                                               \
+//} while (0)
+//#else
+//#define NSLog(...)
+//#endif
+//判断是否 Retina屏、设备是否%fhone 5、是否是iPad
+#define isRetina ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(640, 960), [[UIScreen mainScreen] currentMode].size) : NO)
+#define iPhone5 ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(640, 1136), [[UIScreen mainScreen] currentMode].size) : NO)
+#define isPad (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
+
+//获取系统版本
+#define IOS_VERSION [[[UIDevice currentDevice] systemVersion] floatValue]
+#define CurrentSystemVersion [[UIDevice currentDevice] systemVersion]
+
+//判断是真机还是模拟器
+#if TARGET_OS_IPHONE
+//iPhone Device
+#endif
+
+#if TARGET_IPHONE_SIMULATOR
+//iPhone Simulator
+#endif
+
+//检查系统版本
+#define SYSTEM_VERSION_EQUAL_TO(v)                  ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] == NSOrderedSame)
+#define SYSTEM_VERSION_GREATER_THAN(v)              ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] == NSOrderedDescending)
+#define SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(v)  ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] != NSOrderedAscending)
+#define SYSTEM_VERSION_LESS_THAN(v)                 ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] == NSOrderedAscending)
+#define SYSTEM_VERSION_LESS_THAN_OR_EQUAL_TO(v)     ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] != NSOrderedDescending)
+
+//读取本地图片
+#define LOADIMAGE(file,ext) [UIImage imageWithContentsOfFile:[[NSBundle mainBundle]pathForResource:file ofType:ext]]
+
+//定义UIImage对象
+#define IMAGE(imageName) [UIImage imageNamed:[NSString stringWithFormat:@"%@",imageName]]
+
+#define IS_IOS7 (([[[UIDevice currentDevice] systemVersion] floatValue] >= 7.0)? (YES):(NO))
+#define IS_IOS6 (([[[UIDevice currentDevice] systemVersion] floatValue] >= 6.0)? (YES):(NO))
+#define IS_4INCH ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(640, 1136), [[UIScreen mainScreen] currentMode].size) : NO)
+
+//释放内存
+#define RELEASE_SAFE(_Pointer) do{[_Pointer release],_Pointer = nil;}while(0)
+
+
+
+
+//导入头文件
+#import "AFNetworking.h"
+#import "UIImageView+WebCache.h"
+#import "LTHTTPManager.h"
+#import "MJRefresh.h"
+#import "MBProgressHUD.h"
+#import "STPickerDate.h"
+#import "STPickerSingle.h"
+
+#import <Realm/Realm.h>
+#import <CoreLocation/CoreLocation.h>
+#import <BaiduMapAPI_Base/BMKBaseComponent.h>//引入base相关所有的头文件
+#import <BaiduMapAPI_Map/BMKMapComponent.h>//引入地图功能所有的头文件
+#import <BaiduMapAPI_Search/BMKSearchComponent.h>//引入检索功能所有的头文件
+#import <BaiduMapAPI_Cloud/BMKCloudSearchComponent.h>//引入云检索功能所有的头文件
+#import <BaiduMapAPI_Location/BMKLocationComponent.h>//引入定位功能所有的头文件
+#import <BaiduMapAPI_Utils/BMKUtilsComponent.h>//引入计算工具所有的头文件
+#import <BaiduMapAPI_Radar/BMKRadarComponent.h>//引入周边雷达功能所有的头文件
+#import <BaiduMapAPI_Map/BMKMapView.h>//只引入所需的单个头文件
+#import <RongIMKit/RongIMKit.h>
+#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
+//屏幕宽高
+#define ScreenW [UIScreen mainScreen].bounds.size.width
+#define ScreenH [UIScreen mainScreen].bounds.size.height
+
+// 颜色
+#define LTColor(r, g, b) [UIColor colorWithRed:(r)/255.0 green:(g)/255.0 blue:(b)/255.0 alpha:1.0]
+#define LTColorRGBA(r, g, b, a) [UIColor colorWithRed:(r)/255.0 green:(g)/255.0 blue:(b)/255.0 alpha:a]
+//16进制转10进制
+#define LTColorRGBValue(rgbValue) [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
+
+//以iphone5屏幕适配
+#define WIDTHSCALE [UIScreen mainScreen].bounds.size.width/320
+#define HEIGHTSCALE [UIScreen mainScreen].bounds.size.height/568
+
+
+
+/*
+ *
+ * tag值设置
+ * 按钮 1000+
+ */
+
+//网络监测提示框
+#define LTWLTS(string) UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"温馨提示" message:string delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];\
+[alert show];
+//温馨提示
+#define LTWXTS(string) UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"温馨提示" message:string preferredStyle:UIAlertControllerStyleAlert];\
+UIAlertAction *sure = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:nil];\
+[alertController addAction:sure];\
+[self presentViewController:alertController animated:YES completion:nil];
+//返回上级界面温馨提示
+#define LTWXBACK(string) UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"温馨提示" message:string preferredStyle:UIAlertControllerStyleAlert];\
+UIAlertAction *sure = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {\
+    [self leftButtonEvent:self.leftButton];\
+}];\
+[alertController addAction:sure];\
+[self presentViewController:alertController animated:YES completion:nil];
+
+
+#endif /* MyHeader_pch */

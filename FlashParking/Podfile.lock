@@ -1,0 +1,54 @@
+PODS:
+  - AFNetworking (3.1.0):
+    - AFNetworking/NSURLSession (= 3.1.0)
+    - AFNetworking/Reachability (= 3.1.0)
+    - AFNetworking/Security (= 3.1.0)
+    - AFNetworking/Serialization (= 3.1.0)
+    - AFNetworking/UIKit (= 3.1.0)
+  - AFNetworking/NSURLSession (3.1.0):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/Reachability (3.1.0)
+  - AFNetworking/Security (3.1.0)
+  - AFNetworking/Serialization (3.1.0)
+  - AFNetworking/UIKit (3.1.0):
+    - AFNetworking/NSURLSession
+  - BaiduMapKit (3.0.0)
+  - GYHttpMock (1.0.0)
+  - iOS-AlipaySDK (3.0.2):
+    - iOS-AlipaySDK/Core (= 3.0.2)
+  - iOS-AlipaySDK/Core (3.0.2)
+  - MBProgressHUD (1.0.0)
+  - MJRefresh (3.1.9)
+  - Realm (1.0.2):
+    - Realm/Headers (= 1.0.2)
+  - Realm/Headers (1.0.2)
+  - RongCloudIMKit (2.6.3)
+  - SDWebImage (3.8.1):
+    - SDWebImage/Core (= 3.8.1)
+  - SDWebImage/Core (3.8.1)
+
+DEPENDENCIES:
+  - AFNetworking
+  - BaiduMapKit
+  - GYHttpMock
+  - iOS-AlipaySDK
+  - MBProgressHUD
+  - MJRefresh
+  - Realm
+  - RongCloudIMKit
+  - SDWebImage
+
+SPEC CHECKSUMS:
+  AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
+  BaiduMapKit: de2a726d5296d6b2dc0e974b683af73153608dcd
+  GYHttpMock: d138c4197d0a133c1dca26d802f84266d3903eac
+  iOS-AlipaySDK: 97d1c1fe06083e5bf2d9b56981cf469eeb508b78
+  MBProgressHUD: 4890f671c94e8a0f3cf959aa731e9de2f036d71a
+  MJRefresh: c5f1f1653e5a1b932c90f78074f2bc86f3f9bd5e
+  Realm: 9d5c46a4d7d27958530a8dfc58f63a99e5c2cba3
+  RongCloudIMKit: bf16a77298dcc52d6e7c8a41ac7ecc394e552abc
+  SDWebImage: 35f9627a3e44b4f292a8a8ce6a531fa488239b91
+
+COCOAPODS: 0.39.0

@@ -1,0 +1,19 @@
+# Uncomment this line to define a global platform for your project
+platform :ios, '9.0'
+
+target 'FlashParking' do
+  # Uncomment this line if you're using Swift or would like to use dynamic frameworks
+  # use_frameworks!
+
+  # Pods for FlashParking
+
+pod 'AFNetworking'
+pod 'SDWebImage'
+pod 'GYHttpMock'
+pod 'BaiduMapKit'
+pod 'RongCloudIMKit'
+pod 'MJRefresh'
+pod 'MBProgressHUD'
+pod 'iOS-AlipaySDK'
+pod 'Realm'
+end
